@@ -11,8 +11,8 @@ function Header() {
         <Stack>
             <Flex alignSelf='center'>
                 <Box align='center'>
-                <Text fontSize='7xl' fontWeight='bold' bgGradient='linear(to-r, cyan.400, blue.500, purple.600)' bgClip='text'>Working Title of Game</Text>
-                <Text fontSize='3xl' fontWeight='semibold'>created by JAM</Text>
+                <Text fontSize='7xl' fontWeight='bold' bgGradient='linear(to-r, cyan.400, blue.500, purple.600)' bgClip='text'>🪂 Parachute Play 🪂</Text>
+                <Text fontSize='1xl' fontWeight='semibold' align='right'>word game created by JAM 🪕</Text>
                 <Text color={isDark ? 'gray.200' : 'gray.500'}></Text>
                 </Box>
 
