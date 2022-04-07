@@ -2,7 +2,7 @@ import React from "react";
 import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Flex, Heading, Text } from '@chakra-ui/layout';
 
-function Body() {
+function Parachute() {
     const { colorMode } = useColorMode();
     const isDark = colorMode ==='dark';
 
@@ -24,4 +24,4 @@ function Body() {
 
 
 
-export default Body;
+export default Parachute;

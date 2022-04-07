@@ -1,6 +1,6 @@
 import Nav from './components/Nav';
 import Header from './components/Header';
-import Body from './components/Body';
+import Parachute from './components/Parachute';
 import Monsters from './components/Monsters';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <main>
           <Nav></Nav>
           <Header></Header>
-          <Body></Body>
+          <Parachute></Parachute>
           <Monsters></Monsters>
       </main>
     </div>

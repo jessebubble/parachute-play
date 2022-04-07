@@ -34,19 +34,19 @@ const Column = styled.div`
     padding: 7rem;
     position: relative;
     ${Image}:nth-child(1) {
-      top: 130px;
+      top: 230px;
       left: 320px;
     }
     ${Image}:nth-child(2) {
-      top: 220px;
+      top: 320px;
       right: -40px;
     }
     ${Image}:nth-child(3) {
-      top: 210px;
+      top: 310px;
       left: -250px;
     }
     ${Image}:nth-child(4) {
-      bottom: 500px;
+      bottom: 400px;
       right: -520px;
     }
 `;
