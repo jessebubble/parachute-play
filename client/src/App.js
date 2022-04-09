@@ -2,8 +2,8 @@ import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Parachute from "./components/Parachute";
 import Monsters from "./components/Monsters";
-import WrongGuesses from "./components/WrongGuesses";
 import Word from "./components/Word";
+import WrongGuesses from "./components/WrongGuesses";
 import Keyboard from "./components/Keyboard";
 
 function App() {
@@ -13,8 +13,12 @@ function App() {
         <Nav></Nav>
         <Header></Header>
         <Parachute></Parachute>
-        <Keyboard />
         <Monsters></Monsters>
+        <Word />
+        <WrongGuesses />
+        <div>
+          <Keyboard />
+        </div>
       </main>
     </div>
   );
