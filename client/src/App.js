@@ -1,10 +1,6 @@
 import Nav from "./components/Nav";
 import Header from "./components/Header";
-import Parachute from "./components/Parachute";
-import Monsters from "./components/Monsters";
-import Word from "./components/Word";
-import Keyboard from "./components/Keyboard";
-import Timer from "./components/Timer";
+import GameLogic from "./components/GameLogic/GameLogic";
 
 function App() {
   return (
@@ -12,9 +8,7 @@ function App() {
       <main>
         <Nav></Nav>
         <Header></Header>
-        <Parachute></Parachute>
-        <Word />
-        <Monsters></Monsters>
+        <GameLogic />
       </main>
     </div>
   );

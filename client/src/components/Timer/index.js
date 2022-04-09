@@ -17,7 +17,7 @@ const Timer = () => {
     return () => clearInterval(interval);
   }, [isActive, timer]);
   return (
-    <Flex justify={"flex-end"} marginRight={"500"}>
+    <Flex justify={"flex-end"} marginTop={"100"}>
       <div>Time: {timer}</div>
     </Flex>
   );

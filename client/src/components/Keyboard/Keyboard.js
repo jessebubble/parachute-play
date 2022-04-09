@@ -48,7 +48,11 @@ const Keyboard = () => {
       </Button>
     );
   });
-  return <Container className="key-container">{keyboard}</Container>;
+  return (
+    <Container className="key-container" marginTop={"50"}>
+      {keyboard}
+    </Container>
+  );
 };
 
 export default Keyboard;
