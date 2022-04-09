@@ -1,18 +1,23 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Flex, Text } from "@chakra-ui/react";
+import Keyboard from "../Keyboard";
+import Timer from "../Timer";
 
 const Word = () => {
-  const [playing, setPlaying] = useState(true);
   const [correctGuess, setCorrectGuess] = useState([]);
 
-  const guesses = 0;
   const words = ["TEST", "BILLY", "WIZARD"];
   let selectedWord = words[Math.floor(Math.random() * words.length)];
   const wordToGuess = selectedWord.split("").fill("_").join(" ");
 
   return (
     <div>
-      <p>{wordToGuess}</p>
+      <Timer />
+      <Flex justify={"center"}>
+        <Text fontSize={"80px"}>{wordToGuess}</Text>
+      </Flex>
+      <Keyboard />
     </div>
   );
 };

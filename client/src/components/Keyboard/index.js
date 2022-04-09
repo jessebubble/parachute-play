@@ -31,7 +31,7 @@ const Keyboard = () => {
     "B",
     "N",
     "M",
-    "<<",
+    "ENTER",
   ];
 
   const keyboard = keys.map((key, index) => {
@@ -39,6 +39,7 @@ const Keyboard = () => {
       <Button
         className="key-container"
         key={index}
+        disabled={false}
         onClick={() => {
           return key;
         }}

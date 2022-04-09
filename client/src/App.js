@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Parachute from "./components/Parachute";
 import Monsters from "./components/Monsters";
 import Word from "./components/Word";
-import WrongGuesses from "./components/WrongGuesses";
 import Keyboard from "./components/Keyboard";
 import Timer from "./components/Timer";
 
@@ -14,13 +13,8 @@ function App() {
         <Nav></Nav>
         <Header></Header>
         <Parachute></Parachute>
-        <Monsters></Monsters>
-        <Timer />
         <Word />
-        <WrongGuesses />
-        <div>
-          <Keyboard />
-        </div>
+        <Monsters></Monsters>
       </main>
     </div>
   );
