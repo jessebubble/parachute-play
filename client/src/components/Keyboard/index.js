@@ -40,7 +40,7 @@ const Keyboard = () => {
         className="key-container"
         key={index}
         onClick={() => {
-          console.log("clicked");
+          return key;
         }}
       >
         {key}
