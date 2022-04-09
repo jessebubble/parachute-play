@@ -1,0 +1,32 @@
+
+#Vector {
+    animation: fadeInUp 1s;
+  /*   stroke-dasharray: 908;
+    stroke-dashoffset: 908;
+    animation: sign 4s ease; */
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #Vector {
+      animation: 
+      bounce 500ms
+      alternate infinite
+      cubic-bezier(.2, .65, .6, 1);
+  }
+  @keyframes bounce{
+      from {
+          transform: translateY(0px);
+      }
+      to {
+          transform: translateY(20px);
+      }
+  }

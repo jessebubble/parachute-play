@@ -23,8 +23,8 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100vh;
-    padding: 3rem calc((100vw-1300px) / 2);
-    `;
+    padding: 3rem calc((100vw-1300px) / 2)
+`;
 
 const Image = styled(motion.img)`
     position: absolute;
@@ -34,55 +34,55 @@ const Image = styled(motion.img)`
     max-height: 250px;
     `; 
 const Column = styled.div`    
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 7rem;
     position: relative;
+    
     ${Image}:nth-child(1) {
-      top: -30px;
+      top: -0px;
       left: 320px;
     }
     ${Image}:nth-child(2) {
-      top: 60px;
+      top: 100px;
       right: -40px;
     }
     ${Image}:nth-child(3) {
-      top: 40px;
+      top: 80px;
       left: -250px;
     }
     ${Image}:nth-child(4) {
-      bottom: 640px;
+      bottom: 650px;
       right: -520px;
     }
     ${Image}:nth-child(5) {
-      bottom: 1220px;
-      right: -30px;
+      bottom: 1080px;
+      right: -525px;
       max-width: 75px;
     }
     ${Image}:nth-child(6) {
-      bottom: 1250px;
-      right: 250px;
+      bottom: 950px;
+      right: -650px;
       max-width: 75px;
     }
     ${Image}:nth-child(7) {
-      bottom: 1240px;
-      right: 320px;
+      bottom: 1270px;
+      right: 700px;
       max-width: 75px;
     }
     ${Image}:nth-child(8) {
-      bottom: 1210px;
-      right: 380px;
+      bottom: 900px;
+      right: 700px;
       max-width: 75px;
     }
     ${Image}:nth-child(9) {
-      bottom: 1240px;
-      right: 110px;
+      bottom: 1290px;
+      right: -640px;
       max-width: 75px;
     }
     ${Image}:nth-child(10) {
-      bottom: 1290px;
-      right: 90px;
+      bottom: 1055px;
+      right: 555px;
       max-width: 75px;
     }
 `;
