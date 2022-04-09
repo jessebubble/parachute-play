@@ -5,6 +5,7 @@ import Monsters from "./components/Monsters";
 import Word from "./components/Word";
 import WrongGuesses from "./components/WrongGuesses";
 import Keyboard from "./components/Keyboard";
+import Timer from "./components/Timer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header></Header>
         <Parachute></Parachute>
         <Monsters></Monsters>
+        <Timer />
         <Word />
         <WrongGuesses />
         <div>
