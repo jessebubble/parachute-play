@@ -1,4 +1,4 @@
-export function Notifcations(setter) {
+export function Notifications(setter) {
   setter(true);
   setTimeout(() => {
     setter(false);

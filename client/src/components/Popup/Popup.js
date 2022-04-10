@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { checkGameState } from "../../utils/checkGameState";
-import { Flex, Button } from "@chakra-ui/react";
+import { AlertDialog, Button } from "@chakra-ui/react";
 
 const Popup = ({
   correctGuess,
@@ -27,11 +27,11 @@ const Popup = ({
   useEffect(() => setIsPlaying(playing));
 
   return (
-    <Flex>
+    <AlertDialog>
       <h2>{message}</h2>
       <h3>{revealWord}</h3>
       <Button onClick={playAgain}>Play Again?</Button>
-    </Flex>
+    </AlertDialog>
   );
 };
 
