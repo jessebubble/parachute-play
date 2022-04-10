@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Flex } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import Word from "../Word/Word";
 import Parachute from "../Parachute";
 import Monsters from "../Monsters";
@@ -8,6 +8,7 @@ import Timer from "../Timer/Timer";
 import WrongGuess from "../WrongGuess/WrongGuess";
 import Popup from "../Popup/Popup";
 import Notification from "../Notification/Notification";
+import { Notifications } from "../../utils/notifications";
 
 const words = ["TEST", "BILLY", "WIZARD"];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
@@ -17,7 +18,7 @@ const GameLogic = () => {
   const [correctGuess, setCorrectGuess] = useState([]);
   const [wrongGuess, setWrongGuess] = useState([]);
   const [showNotify, setShowNotify] = useState(false);
-  const wordToGuess = selectedWord.split("").fill("_").join(" ");
+  // const wordToGuess = selectedWord.split("").fill("_").join(" ");
 
   const playGame = () => {
     setIsPlaying(!isPlaying);
@@ -39,23 +40,25 @@ const GameLogic = () => {
     const handleKeyInput = (e) => {
       const { key, keyCode } = e;
       if (isPlaying && keyCode >= 65 && keyCode <= 90) {
-        const letter = key.toLowerCase();
+        const letter = key.toUpperCase();
         if (selectedWord.includes(letter)) {
           if (!correctGuess.includes(letter)) {
             setCorrectGuess((current) => [...current, letter]);
           } else {
-            Notification(setShowNotify);
+            Notifications(setShowNotify);
           }
         } else {
           if (!wrongGuess.includes(letter)) {
-            Notification((current) => [...current, letter]);
+            setWrongGuess((current) => [...current, letter]);
           } else {
-            Notification(setShowNotify);
+            Notifications(setShowNotify);
           }
         }
       }
     };
-  });
+    window.addEventListener("keydown", handleKeyInput);
+    return () => window.removeEventListener("keydown", handleKeyInput);
+  }, [correctGuess, wrongGuess, isPlaying]);
 
   if (!isPlaying) {
     return (
@@ -73,7 +76,7 @@ const GameLogic = () => {
         <div>
           <WrongGuess wrongGuess={wrongGuess} />
           <Timer />
-          <Word correctGuess={correctGuess} selectedWord={wordToGuess} />
+          <Word correctGuess={correctGuess} selectedWord={selectedWord} />
           <Keyboard />
         </div>
         <Popup
