@@ -8,7 +8,6 @@ const WrongGuess = ({ wrongGuess }) => {
         {wrongGuess.map((letter, index) => (
           <span key={index}>{`${letter} ,`}</span>
         ))}
-        /
       </Text>
     </Flex>
   );
