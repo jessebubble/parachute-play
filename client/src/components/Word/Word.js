@@ -1,20 +1,20 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
-import Keyboard from "../Keyboard/Keyboard";
-import Timer from "../Timer";
 
-const Word = () => {
+const Word = ({ correctGuess, wrongGuess, keys }) => {
   const words = ["TEST", "BILLY", "WIZARD"];
-  let selectedWord = words[Math.floor(Math.random() * words.length)];
-  const wordToGuess = selectedWord.split("").fill("_").join(" ");
+
+  const getRandomWord = () => {
+    let selectedWord = words[Math.floor(Math.random() * words.length)];
+    const wordToGuess = selectedWord.split("").fill("_").join(" ");
+    return wordToGuess;
+  };
 
   return (
     <div>
-      <Timer />
       <Flex justify={"center"} marginTop={"100"}>
-        <Text fontSize={"80px"}>{wordToGuess}</Text>
+        <Text fontSize={"80px"}>{getRandomWord()}</Text>
       </Flex>
-      <Keyboard />
     </div>
   );
 };
