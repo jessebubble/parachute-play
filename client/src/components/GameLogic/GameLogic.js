@@ -6,12 +6,18 @@ import Monsters from "../Monsters";
 import Keyboard from "../Keyboard/Keyboard";
 import Timer from "../Timer/Timer";
 import WrongGuess from "../WrongGuess/WrongGuess";
+import Popup from "../Popup/Popup";
+import Notification from "../Notification/Notification";
 
-const GameLogic = ({ key, selectedWord }) => {
+const words = ["TEST", "BILLY", "WIZARD"];
+let selectedWord = words[Math.floor(Math.random() * words.length)];
+
+const GameLogic = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [correctGuess, setCorrectGuess] = useState([]);
   const [wrongGuess, setWrongGuess] = useState([]);
   const [showNotify, setShowNotify] = useState(false);
+  const wordToGuess = selectedWord.split("").fill("_").join(" ");
 
   const playGame = () => {
     setIsPlaying(!isPlaying);
@@ -23,6 +29,12 @@ const GameLogic = ({ key, selectedWord }) => {
     </Button>
   );
 
+  const playAgain = () => {
+    setIsPlaying(!isPlaying);
+    setCorrectGuess([]);
+    setWrongGuess([]);
+  };
+
   useEffect(() => {
     const handleKeyInput = (e) => {
       const { key, keyCode } = e;
@@ -32,13 +44,13 @@ const GameLogic = ({ key, selectedWord }) => {
           if (!correctGuess.includes(letter)) {
             setCorrectGuess((current) => [...current, letter]);
           } else {
-            //(setShowNotify);
+            Notification(setShowNotify);
           }
         } else {
           if (!wrongGuess.includes(letter)) {
-            setWrongGuess((current) => [...current, letter]);
+            Notification((current) => [...current, letter]);
           } else {
-            //(setShowNotify);
+            Notification(setShowNotify);
           }
         }
       }
@@ -61,9 +73,17 @@ const GameLogic = ({ key, selectedWord }) => {
         <div>
           <WrongGuess wrongGuess={wrongGuess} />
           <Timer />
-          <Word correctGuess={correctGuess} />
+          <Word correctGuess={correctGuess} selectedWord={wordToGuess} />
           <Keyboard />
         </div>
+        <Popup
+          correctGuess={correctGuess}
+          wrongGuess={wrongGuess}
+          setIsPlaying={setIsPlaying}
+          playAgain={playAgain}
+          selectedWord={selectedWord}
+        />
+        <Notification showNotify={showNotify} />
       </Flex>
     );
   }
