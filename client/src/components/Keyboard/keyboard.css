@@ -1,6 +1,4 @@
 .key-container {
-  width: 510px;
-  display: flex;
   flex-wrap: wrap;
 }
 
@@ -9,7 +7,7 @@
   height: 50px;
   border-radius: 2px;
   border: none;
-  background-color: grey;
+  /* background-color: grey; */
   margin: 3px;
 }
 
