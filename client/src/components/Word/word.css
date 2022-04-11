@@ -1,0 +1,10 @@
+.letter {
+  border-bottom: 3px solid white;
+  display: inline-flex;
+  font-size: 60px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  height: 70px;
+  width: 60px;
+}
