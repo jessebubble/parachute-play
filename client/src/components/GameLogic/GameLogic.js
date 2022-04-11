@@ -25,7 +25,7 @@ const GameLogic = () => {
   };
 
   const startGame = (
-    <Button size={"lg"} onClick={playGame}>
+    <Button colorScheme='cyan' variant='outline' size={"lg"} onClick={playGame}>
       Play
     </Button>
   );
