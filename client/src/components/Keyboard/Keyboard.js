@@ -36,7 +36,7 @@ const Keyboard = () => {
 
   const keyboard = keys.map((key, index) => {
     return (
-      <Button
+      <Button colorScheme='cyan' variant='solid'
         className="key-container"
         key={index}
         disabled={false}
