@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { LOGIN_USER } from '../../utils/mutations';
+import Auth from '../../utils/auth';
+import {
+  Flex,
+  Box,
+  Heading,
+  FormControl,
+  FormLabel,
+  Input,
+  Button
+} from '@chakra-ui/react';
 
-import Auth from '../utils/auth';
+const Login = (props) => { 
 
-const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
 
@@ -40,40 +49,31 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">
-        <div className="card">
-          <h4 className="card-header">Login</h4>
-          <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className="form-input"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="******"
-                name="password"
-                type="password"
-                id="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className="btn d-block w-100" type="submit">
-                Submit
-              </button>
-            </form>
-
-            {error && <div>Login failed</div>}
-          </div>
-        </div>
-      </div>
-    </main>
+    <Flex width="full" align="center" justifyContent="center">
+    <Box p={2}>
+      <Box textAlign="center">
+        <Heading>Login</Heading>
+      </Box>
+      <Box my={4} textAlign="left">
+        <form onSubmit={handleFormSubmit}>
+          <FormControl>
+            <FormLabel>Email</FormLabel>
+            <Input type="email" placeholder="test@test.com" 
+            value={formState.email} onChange={handleChange}/>
+          </FormControl>
+          <FormControl mt={6}>
+            <FormLabel>Password</FormLabel>
+            <Input type="password" placeholder="*******" 
+            value={formState.password} onChange={handleChange} />
+          </FormControl>
+          <Button width="full" mt={4} type="submit">
+            Sign In
+          </Button>
+        </form>
+        {error && <div>Login failed</div>}
+      </Box>
+    </Box>
+  </Flex>
   );
 };
 

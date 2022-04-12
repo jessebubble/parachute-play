@@ -27,5 +27,14 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessebubble/hangman.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jessebubble/hangman/issues"
+  },
+  "homepage": "https://github.com/jessebubble/hangman#readme"
 }
