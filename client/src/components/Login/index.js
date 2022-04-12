@@ -56,14 +56,14 @@ const Login = (props) => {
       </Box>
       <Box my={4} textAlign="left">
         <form onSubmit={handleFormSubmit}>
-          <FormControl>
-            <FormLabel>Email</FormLabel>
-            <Input type="email" placeholder="test@test.com" 
+          <FormControl isRequired>
+            <FormLabel htmlFor="email">Email</FormLabel>
+            <Input id="email" type="test@test.com" placeholder="test@test.com"
             value={formState.email} onChange={handleChange}/>
           </FormControl>
           <FormControl mt={6}>
             <FormLabel>Password</FormLabel>
-            <Input type="password" placeholder="*******" 
+            <Input htmlFor="password" placeholder="*******" 
             value={formState.password} onChange={handleChange} />
           </FormControl>
           <Button width="full" mt={4} type="submit">
