@@ -1,6 +1,5 @@
 import React from 'react';
 import { useColorMode } from '@chakra-ui/color-mode';
-/* import { Image } from '@chakra-ui/image'; */
 import { Stack, Flex, Box, Text } from '@chakra-ui/layout';
 
 function Header() {
@@ -15,12 +14,6 @@ function Header() {
                 <Text fontSize='1xl' fontWeight='semibold' align='right'>word game created by JAM 🪕</Text>
                 <Text color={isDark ? 'gray.200' : 'gray.500'}></Text>
                 </Box>
-
-                {/* <Image
-                    alignSelf='center' 
-                    borderRadius='full'
-                    backgroundColor='transparent' boxShadow='lg'
-                    boxSize='300px' src='https://ca.slack-edge.com/T02GXRVP58D-U02JWDR2ZRN-f9cd883775c3-512' /> */}
             </Flex>
         </Stack>
     )

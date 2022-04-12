@@ -74,10 +74,10 @@ const GameLogic = () => {
           <Monsters />
         </div>
         <div>
-          <WrongGuess wrongGuess={wrongGuess} />
-          <Timer />
+          <WrongGuess wrongGuess={wrongGuess} display='flex'/>
+          <Timer display='flex' />
           <Word correctGuess={correctGuess} selectedWord={selectedWord} />
-          <Keyboard />
+          <Keyboard display='flex' />
         </div>
         <Popup
           correctGuess={correctGuess}

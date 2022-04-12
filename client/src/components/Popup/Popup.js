@@ -30,7 +30,7 @@ const Popup = ({
     <AlertDialog>
       <h2>{message}</h2>
       <h3>{revealWord}</h3>
-      <Button onClick={playAgain}>Play Again?</Button>
+      <Button colorScheme='cyan' variant='solid' onClick={playAgain}>Play Again?</Button>
     </AlertDialog>
   );
 };
