@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
+import "./popup.css";
 import { checkGameState } from "../../utils/checkGameState";
-import { AlertDialog, Button } from "@chakra-ui/react";
 
 const Popup = ({
   correctGuess,
@@ -13,7 +13,7 @@ const Popup = ({
   let revealWord = "";
   let playing = true;
 
-  if (checkGameState(correctGuess, wrongGuess, selectedWord) === "win") {
+  if (checkGameState(correctGuess, wrongGuess, selectedWord) === "won") {
     message = "Correct! You win!";
     playing = false;
   } else if (
@@ -27,11 +27,16 @@ const Popup = ({
   useEffect(() => setIsPlaying(playing));
 
   return (
-    <AlertDialog>
-      <h2>{message}</h2>
-      <h3>{revealWord}</h3>
-      <Button onClick={playAgain}>Play Again?</Button>
-    </AlertDialog>
+    <div
+      className="popup-container"
+      style={message !== "" ? { display: "flex" } : {}}
+    >
+      <div className="popup">
+        <h2>{message}</h2>
+        <h3>{revealWord}</h3>
+        <button onClick={playAgain}>Play Again</button>
+      </div>
+    </div>
   );
 };
 

@@ -1,17 +1,12 @@
-import React, { useState } from "react";
-import { Tooltip } from "@chakra-ui/react";
+import React from "react";
+import "./notification.css";
 
 const Notification = ({ showNotify }) => {
-  const [isShowing, setIsShowing] = useState(false);
-
-  const toggleNotify = () => {
-    setIsShowing(!isShowing);
-  };
-
-  if (!isShowing) {
-    toggleNotify();
-    return <Tooltip>You have already entered this letter!</Tooltip>;
-  }
+  return (
+    <div className={`notification-container ${showNotify ? "show" : ""}`}>
+      <p>You have already entered this letter</p>
+    </div>
+  );
 };
 
 export default Notification;
