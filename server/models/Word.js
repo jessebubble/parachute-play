@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+/* const { Schema } = require('mongoose');
 
 const wordSchema = new Schema(
     {
@@ -22,7 +22,5 @@ const wordSchema = new Schema(
     }
   );
   
-  
-  
   module.exports = wordSchema;
-  
+   */
