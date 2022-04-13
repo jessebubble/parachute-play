@@ -11,11 +11,12 @@ import {
   Input,
   Button
 } from '@chakra-ui/react';
+import GameLogic from '../GameLogic/GameLogic';
 
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-  
+    username: '',
     email: '',
     password: '',
   });
@@ -40,7 +41,9 @@ const Signup = () => {
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token)
+      return <GameLogic/>;
+
     } catch (e) {
       console.error(e);
     }
@@ -54,19 +57,42 @@ const Signup = () => {
       </Box>
       <Box my={4} textAlign="left">
         <form onSubmit={handleFormSubmit}>
+        <FormControl>
+            <FormLabel>Username</FormLabel>
+            <Input 
+                id="username"
+                type="username"
+                name="username"
+                autoComplete="on"
+                placeholder="Username"
+                value={formState.username}
+                onChange={handleChange}/>
+          </FormControl>
           <FormControl>
             <FormLabel>Email</FormLabel>
-            <Input type="email" placeholder="test@test.com" 
-            value={formState.email} onChange={handleChange}/>
+            <Input id="email"
+                type="email"
+                name="email"
+                autoComplete="on"
+                placeholder="Your email"
+                value={formState.email}
+                onChange={handleChange}/>
           </FormControl>
           <FormControl mt={6}>
             <FormLabel>Password</FormLabel>
-            <Input type="password" placeholder="*******" 
-            value={formState.password} onChange={handleChange} />
+            <Input                 id="password"
+                type="password"
+                placeholder="Password"
+                name="password"
+                autoComplete="on"
+                value={formState.password}
+                onChange={handleChange} />
           </FormControl>
+          
           <Button width="full" mt={4} type="submit">
             Submit
           </Button>
+         
         </form>
         {error && <div>Signup failed</div>}
       </Box>
