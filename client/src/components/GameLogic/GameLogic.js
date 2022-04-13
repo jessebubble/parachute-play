@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Button, Flex } from "@chakra-ui/react";
 import Word from "../Word/Word";
 import Parachute from "../Parachute";
 import Monsters from "../Monsters";
@@ -14,26 +14,27 @@ const words = ["TEST", "BILLY", "WIZARD"];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const GameLogic = () => {
+  const [startButton, setStartButton] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [correctGuess, setCorrectGuess] = useState([]);
   const [wrongGuess, setWrongGuess] = useState([]);
   const [showNotify, setShowNotify] = useState(false);
-  // const wordToGuess = selectedWord.split("").fill("_").join(" ");
 
   const playGame = () => {
-    setIsPlaying(!isPlaying);
+    setStartButton(true);
   };
 
   const startGame = (
-    <Button colorScheme='cyan' variant='outline' size={"lg"} onClick={playGame}>
+    <Button colorScheme="cyan" variant="outline" size={"lg"} onClick={playGame}>
       Play
     </Button>
   );
 
   const playAgain = () => {
-    setIsPlaying(!isPlaying);
+    setIsPlaying(true);
     setCorrectGuess([]);
     setWrongGuess([]);
+    selectedWord = words[Math.floor(Math.random() * words.length)];
   };
 
   useEffect(() => {
@@ -60,7 +61,7 @@ const GameLogic = () => {
     return () => window.removeEventListener("keydown", handleKeyInput);
   }, [correctGuess, wrongGuess, isPlaying]);
 
-  if (!isPlaying) {
+  if (startButton === false) {
     return (
       <Flex justify={"center"} marginTop={"300"}>
         {startGame}

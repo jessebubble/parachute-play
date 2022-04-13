@@ -1,5 +1,5 @@
 export function checkGameState(correct, wrong, word) {
-  let status = "win";
+  let status = "won";
 
   word.split("").forEach((letter) => {
     if (!correct.includes(letter)) {

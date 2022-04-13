@@ -1,0 +1,11 @@
+.notification-container {
+  position: absolute;
+  bottom: 28rem;
+  right: 30rem;
+  transition: transform 0.3s ease-in-out;
+  display: none;
+}
+
+.notification-container.show {
+  display: flex;
+}
