@@ -30,3 +30,15 @@
           transform: translateY(20px);
       }
   }
+/* 
+  #right4, #right3, #right2, #right1 {
+    animation: fadeIn linear 6s;
+  }
+
+  #left4, #left3, #left2, #left1 {
+    animation: fadeIn linear 6s;  }
+
+    @keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
+    } */
