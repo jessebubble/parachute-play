@@ -1,6 +1,17 @@
 import React, { useEffect } from "react";
 import "./popup.css";
 import { checkGameState } from "../../utils/checkGameState";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+} from "@chakra-ui/react";
 
 const Popup = ({
   correctGuess,
@@ -9,6 +20,8 @@ const Popup = ({
   setIsPlaying,
   playAgain,
 }) => {
+  const { isOpen, onClose } = useDisclosure();
+
   let message = "";
   let revealWord = "";
   let playing = true;
