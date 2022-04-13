@@ -19,7 +19,6 @@ const GameLogic = () => {
   const [correctGuess, setCorrectGuess] = useState([]);
   const [wrongGuess, setWrongGuess] = useState([]);
   const [showNotify, setShowNotify] = useState(false);
-  const [timer, setTimer] = useState(0);
 
   const playGame = () => {
     setStartButton(true);
