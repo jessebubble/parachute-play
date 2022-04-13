@@ -10,8 +10,8 @@
     "apollo-server-express": "^3.6.7",
     "graphql": "^16.3.0",
     "mongoose": "^6.2.10",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": ">=16.8 || ^17.0.0 || ^18.0.0",
+    "react-dom": ">=16.8 || ^17.0.0 || ^18.0.0",
     "react-scripts": "^5.0.0",
     "web-vitals": "^2.1.4"
   },
@@ -27,5 +27,14 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessebubble/hangman.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jessebubble/hangman/issues"
+  },
+  "homepage": "https://github.com/jessebubble/hangman#readme"
 }

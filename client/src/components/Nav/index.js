@@ -5,17 +5,25 @@ import { Flex, VStack, Heading, Spacer } from '@chakra-ui/layout';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { Image } from '@chakra-ui/image';
 
+import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
+
 
 function Nav() {
 
     const { colorMode, toggleColorMode } = useColorMode();
     const isDark = colorMode === 'dark';
 
+    const logout = event => {
+        event.preventDefault();
+        Auth.logout();
+      };
+
     return (
         <VStack p={5}>
             <Flex w='100%'>
                 <Heading
-                    ml='8' size='md' fontweight='semibold' color='cyan.400'>
+                    ml='8' size='md' fontWeight='semibold' color='cyan.400'>
                 </Heading>
                 <Spacer></Spacer>
                 <Image
@@ -43,6 +51,19 @@ function Nav() {
                     onClick={() =>
                     window.open("https://github.com/mikebashford")} />
                 <IconButton ml={8} icon={isDark ? <FaSun /> : <FaMoon />} isRound='true' onClick={toggleColorMode}></IconButton>
+                {Auth.loggedIn() ? (
+            <>
+              <Link to="Login" ml={2}>Login</Link>
+              <a href="/" onClick={logout}>
+                Logout
+              </a>
+            </>
+          ) : (
+            <>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Signup</Link>
+            </>
+          )}
             </Flex>
         </VStack>
     );
