@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 import {
   Flex,
   Box,
@@ -9,12 +9,11 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Button
-} from '@chakra-ui/react';
+  Button,
+} from "@chakra-ui/react";
 
-const Login = (props) => { 
-
-  const [formState, setFormState] = useState({ email: '', password: '' });
+const Login = (props) => {
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -43,37 +42,49 @@ const Login = (props) => {
 
     // clear form values
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
   return (
     <Flex width="full" align="center" justifyContent="center">
-    <Box p={2}>
-      <Box textAlign="center">
-        <Heading>Login</Heading>
+      <Box p={2}>
+        <Box textAlign="center">
+          <Heading>Login</Heading>
+        </Box>
+        <Box my={4} textAlign="left">
+          <form onSubmit={handleFormSubmit}>
+            <FormControl>
+              <FormLabel>Email address</FormLabel>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Your email"
+                autoComplete="on"
+                value={formState.username}
+                onChange={handleChange}
+              />
+            </FormControl>
+            <FormControl mt={6}>
+              <FormLabel>Password</FormLabel>
+              <Input
+                id="password"
+                type="password"
+                placeholder="Password"
+                autoComplete="on"
+                value={formState.username}
+                onChange={handleChange}
+              />
+            </FormControl>
+            <Button width="full" mt={4} type="submit">
+              Sign In
+            </Button>
+          </form>
+          {error && <div>Login failed</div>}
+        </Box>
       </Box>
-      <Box my={4} textAlign="left">
-        <form onSubmit={handleFormSubmit}>
-          <FormControl isRequired>
-            <FormLabel htmlFor="email">Email</FormLabel>
-            <Input id="email" type="test@test.com" placeholder="test@test.com"
-            value={formState.email} onChange={handleChange}/>
-          </FormControl>
-          <FormControl mt={6}>
-            <FormLabel>Password</FormLabel>
-            <Input htmlFor="password" placeholder="*******" 
-            value={formState.password} onChange={handleChange} />
-          </FormControl>
-          <Button width="full" mt={4} type="submit">
-            Sign In
-          </Button>
-        </form>
-        {error && <div>Login failed</div>}
-      </Box>
-    </Box>
-  </Flex>
+    </Flex>
   );
 };
 
