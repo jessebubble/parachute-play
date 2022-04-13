@@ -24,6 +24,15 @@ startServer()
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+// app.use(
+//   '/graphql',
+//   graphqlExpress(req => ({
+//     schemas,
+//     context: {
+//       user: req.user
+//     }
+//   })),
+// );
 
 // Serve up static assets
 // if (process.env.NODE_ENV === 'production') {
