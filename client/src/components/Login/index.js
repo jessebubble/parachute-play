@@ -61,8 +61,9 @@ const Login = (props) => {
                 id="email"
                 type="email"
                 placeholder="Your email"
+                name="email"
                 autoComplete="on"
-                value={formState.username}
+                value={formState.email}
                 onChange={handleChange}
               />
             </FormControl>
@@ -71,9 +72,10 @@ const Login = (props) => {
               <Input
                 id="password"
                 type="password"
+                name="password"
                 placeholder="Password"
                 autoComplete="on"
-                value={formState.username}
+                value={formState.password}
                 onChange={handleChange}
               />
             </FormControl>
