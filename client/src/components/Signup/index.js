@@ -11,6 +11,7 @@ import {
   Input,
   Button
 } from '@chakra-ui/react';
+import GameLogic from '../GameLogic/GameLogic';
 
 
 const Signup = () => {
@@ -40,7 +41,9 @@ const Signup = () => {
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token)
+      return <GameLogic/>;
+
     } catch (e) {
       console.error(e);
     }
@@ -85,9 +88,11 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange} />
           </FormControl>
+          
           <Button width="full" mt={4} type="submit">
             Submit
           </Button>
+         
         </form>
         {error && <div>Signup failed</div>}
       </Box>

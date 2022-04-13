@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import GameLogic from "../GameLogic/GameLogic";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
+import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 import {
   Flex,
@@ -35,7 +37,8 @@ const Login = (props) => {
         variables: { ...formState },
       });
 
-      Auth.login(data.login.token);
+      Auth.login(data.login.token)
+      return <GameLogic/>;
     } catch (e) {
       console.error(e);
     }
@@ -79,9 +82,11 @@ const Login = (props) => {
                 onChange={handleChange}
               />
             </FormControl>
+           
             <Button width="full" mt={4} type="submit">
               Sign In
             </Button>
+            
           </form>
           {error && <div>Login failed</div>}
         </Box>
