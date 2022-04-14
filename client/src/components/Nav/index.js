@@ -4,7 +4,7 @@ import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, VStack, Heading, Spacer } from "@chakra-ui/layout";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Image } from "@chakra-ui/image";
-
+import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 
@@ -53,21 +53,30 @@ function Nav() {
         />
         <IconButton
           ml={8}
+          boxSize="47px"
           icon={isDark ? <FaSun /> : <FaMoon />}
           isRound="true"
           onClick={toggleColorMode}
         ></IconButton>
         {Auth.loggedIn() ? (
           <>
+            <Button ml={2} size="sm" boxSize="47px">
             <Link to="/" ml={2} onClick={logout}>
               Logout
             </Link>
+            </Button>
+            <Button ml={2} size="sm" boxSize="47px">
             <Link to="/gamelogic">Start Game</Link>
+            </Button>
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
+            <Button ml={2} size="sm" boxSize="47px">
+              <Link to="/login">Login</Link>
+            </Button>
+            <Button ml={2} size="sm" boxSize="47px">
             <Link to="/signup">Signup</Link>
+            </Button>
           </>
         )}
       </Flex>
