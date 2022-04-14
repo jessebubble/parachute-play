@@ -42,8 +42,8 @@ function App() {
           <Header />
           <div className="container">
             <Switch>
-              {/* <Route exact path="/signup" component={Signup} />
-              <Route exact path="/login" component={Login} /> */}
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/login" component={Login} />
               <Route exact path="/gamelogic" component={GameLogic} />
             </Switch>
           </div>
