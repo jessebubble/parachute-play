@@ -89,7 +89,7 @@ const Signup = () => {
                 onChange={handleChange} />
           </FormControl>
           
-          <Button width="full" mt={4} type="submit">
+          <Button width="full" mt={4} type="submit" colorScheme='cyan' variant='outline'>
             Submit
           </Button>
          

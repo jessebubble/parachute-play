@@ -60,7 +60,7 @@ const Login = (props) => {
           <form onSubmit={handleFormSubmit}>
             <FormControl>
               <FormLabel>Email address</FormLabel>
-              <Input
+              <Input 
                 id="email"
                 type="email"
                 placeholder="Your email"
@@ -83,7 +83,7 @@ const Login = (props) => {
               />
             </FormControl>
            
-            <Button width="full" mt={4} type="submit">
+            <Button width="full" mt={4} type="submit" colorScheme='cyan' variant='outline'>
               Sign In
             </Button>
             
