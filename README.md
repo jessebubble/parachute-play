@@ -1,6 +1,6 @@
 # Parachute Play
 - `word game created by Team JAM 🪕`
-* [View Team Project](https://quiet-lowlands-47842.herokuapp.com/)
+* [View Team Project](https://jam-group-project.herokuapp.com/)
 
 ## Description
 

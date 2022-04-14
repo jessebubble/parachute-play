@@ -10,7 +10,7 @@ import Notification from "../Notification/Notification";
 import { Notifications } from "../../utils/notifications";
 import "./gameLogic.css";
 
-const words = ["TEST", "BILLY", "WIZARD"];
+const words = ["GITHUB", "MONSTER", "WIZARD", "BANJO"];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const GameLogic = () => {
