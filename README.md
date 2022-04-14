@@ -12,4 +12,5 @@
 * [Deploy to Heroku](https://www.heroku.com/)
 
 ## Sample
-![screenshot]()
+![screenshot](./client/src/components/images/screenshot.png)
+![screenshot](./client/src/components/images/screenshot2.png)
