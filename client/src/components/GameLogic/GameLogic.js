@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Button, Flex } from "@chakra-ui/react";
+import { Button, Flex, Container } from "@chakra-ui/react";
 import Word from "../Word/Word";
 import Parachute from "../Parachute";
 import Monsters from "../Monsters";
-import Keyboard from "../Keyboard/Keyboard";
 import Timer from "../Timer/Timer";
 import WrongGuess from "../WrongGuess/WrongGuess";
 import Popup from "../Popup/Popup";
 import Notification from "../Notification/Notification";
 import { Notifications } from "../../utils/notifications";
+import "./gameLogic.css";
 
 const words = ["TEST", "BILLY", "WIZARD"];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
@@ -19,6 +19,65 @@ const GameLogic = () => {
   const [correctGuess, setCorrectGuess] = useState([]);
   const [wrongGuess, setWrongGuess] = useState([]);
   const [showNotify, setShowNotify] = useState(false);
+  const keys = [
+    "Q",
+    "W",
+    "E",
+    "R",
+    "T",
+    "Y",
+    "U",
+    "I",
+    "O",
+    "P",
+    "A",
+    "S",
+    "D",
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "L",
+    "ENTER",
+    "Z",
+    "X",
+    "C",
+    "V",
+    "B",
+    "N",
+    "M",
+    "ENTER",
+  ];
+
+  const keyboard = keys.map((key, index) => {
+    return (
+      <Button
+        colorScheme="cyan"
+        variant="solid"
+        className="key-container"
+        key={index}
+        disabled={false}
+        onClick={() => {
+          if (selectedWord.includes(key)) {
+            if (!correctGuess.includes(key)) {
+              setCorrectGuess((current) => [...current, key]);
+            } else {
+              Notifications(setShowNotify);
+            }
+          } else {
+            if (!wrongGuess.includes(key)) {
+              setWrongGuess((current) => [...current, key]);
+            } else {
+              Notifications(setShowNotify);
+            }
+          }
+        }}
+      >
+        {key}
+      </Button>
+    );
+  });
 
   const playGame = () => {
     setStartButton(true);
@@ -75,10 +134,12 @@ const GameLogic = () => {
           <Monsters />
         </div>
         <div>
-          <WrongGuess wrongGuess={wrongGuess} display='flex'/>
-          <Timer display='flex' />
+          <WrongGuess wrongGuess={wrongGuess} display="flex" />
+          <Timer display="flex" />
           <Word correctGuess={correctGuess} selectedWord={selectedWord} />
-          <Keyboard display='flex' />
+          <Container className="key-container" marginTop={"50"}>
+            {keyboard}
+          </Container>
         </div>
         <Popup
           correctGuess={correctGuess}
